@@ -144,7 +144,7 @@ export function Layout({ children }: LayoutProps) {
                 letterSpacing: "0.04em",
               }}
             >
-              © 2026 [DEVELOPER NAME]
+              © 2026 Yangwei Xu
             </p>
           </div>
           <div className="flex items-center gap-5">
