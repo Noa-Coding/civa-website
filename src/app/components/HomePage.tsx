@@ -1,5 +1,4 @@
 import { Link } from "react-router";
-import { CivaAppPreview } from "./CivaAppPreview";
 import { useLang } from "./LanguageContext";
 import civaIcon from "@/imports/Civa_icon.png";
 
@@ -173,10 +172,6 @@ export function HomePage() {
             </div>
           </div>
 
-          {/* Right: phone preview */}
-          <div className="flex-shrink-0 flex flex-col items-center gap-3">
-            <CivaAppPreview />
-          </div>
         </div>
       </section>
 
