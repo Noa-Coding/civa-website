@@ -16,7 +16,7 @@ const content = {
     tipsTitle: "邮件中可以包含",
     tips: [
       "遇到的问题或功能建议描述",
-      "App 版本号（Settings → About 中可查）",
+      "App 版本号（可附版本截图）",
       "iOS 版本和设备型号",
       "复现问题的步骤（如适用）",
     ],
@@ -33,7 +33,7 @@ const content = {
     tipsTitle: "What to include",
     tips: [
       "Description of the issue or feature request",
-      "App version (found in Settings → About)",
+      "App version (a screenshot is welcome)",
       "iOS version and device model",
       "Steps to reproduce the issue (if applicable)",
     ],
@@ -115,6 +115,13 @@ export function SupportPage() {
           </p>
 
           {/* Email card */}
+          <section className="mb-8 space-y-4 leading-loose">
+            <h2 className="text-xl font-medium">{isCn ? "更新、备份与数据问题" : "Updates, backups and data issues"}</h2>
+            <p>{isCn ? "更新后打不开或菜品缺失时，请先不要卸载、清空厨房或覆盖导入。保留原备份，可另存当前状态，再联系支持。1.1 的“问题诊断”文件不会自动发送；请先查看内容，再自行决定是否分享。" : "If the app will not open or dishes appear missing after updating, do not uninstall, clear the kitchen or run a replacement import. Keep the original backup, save another current copy if possible, and contact support. Version 1.1 diagnostic reports are not sent automatically; review the file before deciding to share it."}</p>
+            <Link to="/update" className="underline">{isCn ? "查看更新与数据恢复指南" : "Read the update and recovery guide"}</Link>
+            <h2 className="text-xl font-medium">{isCn ? "隐私与删除申请" : "Privacy and deletion requests"}</h2>
+            <p>{isCn ? "访问、更正、复制、删除或撤回可选处理的申请，可发送至下方支持邮箱。请说明涉及的反馈编号或分享，以及希望处理的内容。无需提供 Apple 密码、设备解锁密码或整份厨房备份；我们会按最少必要信息核验，无法仅凭邮件远程读取你的私人 iCloud 数据。" : "Send access, correction, copy, deletion or optional-processing withdrawal requests to the support email below. Identify the feedback receipt or share involved and the requested action. Do not include Apple passwords, device passcodes or your whole kitchen backup. We verify requests using minimal necessary information and cannot read your private iCloud data merely from an email."}</p>
+          </section>
           <div
             className="inline-flex flex-col gap-1 rounded-3xl px-5 py-4 mb-8"
             style={{

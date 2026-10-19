@@ -6,7 +6,7 @@ const content = {
   zh: {
     tagline: "爱吃饭、爱做饭星人的电子手帐",
     description:
-      "Civa 是一款本地厨房电子手帐 App，帮你管理想吃的菜、做过的菜和近期用餐计划。你可以建立自己的菜单库，将菜品一键安排到指定日期，查看冰箱食材与临期提醒，并通过轻量回顾保存日常做饭记忆。",
+      "Civa 是一款本地优先的厨房电子手帐，帮你管理想吃的菜、烧过的菜、食记、冰箱和采购。1.1 加入可选的同账户 iCloud 同步、联网菜谱分享与点菜邀请，以及小铺装扮。你可以继续只使用本地厨房，并随时导出 .civa 备份。",
     ctaSupport: "技术支持",
     ctaPrivacy: "隐私政策",
     contactLabel: "联系我们",
@@ -14,7 +14,7 @@ const content = {
   en: {
     tagline: "A digital journal for those who live to eat and love to cook",
     description:
-      "Civa is a local-first kitchen journal App that helps you manage dishes you want to eat, meals you've cooked, and your upcoming meal plans. Build your own menu library, schedule dishes to specific dates in one tap, track fridge ingredients with expiry reminders, and preserve everyday cooking memories through lightweight reflections.",
+      "Civa is a local-first kitchen journal for wanted and cooked dishes, food memories, fridge ingredients and shopping. Version 1.1 adds optional same-account iCloud sync, online recipe sharing and dish invitations, plus shop decorations. You can keep using a local kitchen and export .civa backups whenever you need them.",
     ctaSupport: "Support",
     ctaPrivacy: "Privacy Policy",
     contactLabel: "Contact",
@@ -126,6 +126,7 @@ export function HomePage() {
             </p>
 
             {/* CTAs */}
+            <Link to="/update" className="underline mb-6">{isCn ? "1.1 更新与备份指南" : "1.1 update and backup guide"}</Link>
             <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
               <Link
                 to="/support"

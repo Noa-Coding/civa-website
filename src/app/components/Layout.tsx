@@ -130,6 +130,9 @@ export function Layout({ children }: LayoutProps) {
       </header>
 
       {/* Content */}
+      <aside className="px-6 py-3 text-center text-sm" style={{ background: "var(--yellow50)" }}>
+        {lang === "zh" ? "隐私政策已于2026年10月19日更新 · 1.1功能以App实际发布为准" : "Privacy policy updated October 19, 2026 · Version 1.1 features are subject to app availability"}
+      </aside>
       <main className="flex-1">{children}</main>
 
       {/* Footer */}
@@ -163,6 +166,17 @@ export function Layout({ children }: LayoutProps) {
               {lang === "zh" ? "技术支持" : "Support"}
             </Link>
           </div>
+        </div>
+        <div className="px-6 pb-7 text-center">
+          <a
+            href="https://beian.miit.gov.cn/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:opacity-60 transition-opacity duration-200"
+            style={{ fontSize: "0.8125rem", lineHeight: 1.8, color: "var(--background3)", overflowWrap: "anywhere" }}
+          >
+            浙ICP备2026070495号-2
+          </a>
         </div>
       </footer>
     </div>

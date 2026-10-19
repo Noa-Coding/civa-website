@@ -3,6 +3,8 @@ import { Layout } from "./components/Layout";
 import { HomePage } from "./components/HomePage";
 import { SupportPage } from "./components/SupportPage";
 import { PrivacyPage } from "./components/PrivacyPage";
+import { PrivacyPageV1 } from "./components/PrivacyPageV1";
+import { UpdateGuide } from "./components/UpdateGuide";
 import { LanguageProvider } from "./components/LanguageContext";
 
 export default function App() {
@@ -14,6 +16,8 @@ export default function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/support" element={<SupportPage />} />
             <Route path="/privacy" element={<PrivacyPage />} />
+            <Route path="/privacy/1.0" element={<PrivacyPageV1 />} />
+            <Route path="/update" element={<UpdateGuide />} />
           </Routes>
         </Layout>
       </BrowserRouter>

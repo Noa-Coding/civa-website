@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, type ReactNode } from "react";
+import { createContext, useContext, useEffect, useState, type ReactNode } from "react";
 
 export type Lang = "zh" | "en";
 
@@ -9,6 +9,7 @@ const LanguageContext = createContext<{
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
   const [lang, setLang] = useState<Lang>("zh");
+  useEffect(() => { document.documentElement.lang = lang === "zh" ? "zh-CN" : "en"; }, [lang]);
   return (
     <LanguageContext.Provider value={{ lang, setLang }}>
       {children}
