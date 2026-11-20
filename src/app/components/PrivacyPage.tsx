@@ -1,7 +1,9 @@
 import { Fragment, type ReactNode } from "react";
 import { Link } from "react-router";
 import { useLang } from "./LanguageContext";
-import policy from "@/imports/PRIVACY_POLICY_1_1.md?raw";
+import previousPolicy from "@/imports/PRIVACY_POLICY_1_1.md?raw";
+
+import currentPolicy from "@/imports/PRIVACY_POLICY_1_2.md?raw";
 
 // Reviewed local policy is rendered as text/React nodes, never raw HTML.
 function inline(text: string): ReactNode[] {
@@ -30,15 +32,19 @@ function PolicyBody({ text }: { text: string }) {
   </article>;
 }
 
-export function PrivacyPage() {
+export function PrivacyPage({ previous = false }: { previous?: boolean }) {
+  const policy = previous ? previousPolicy : currentPolicy;
   const { lang } = useLang();
   const chinese = lang === "zh";
   const body = chinese ? policy.split("## 中文版\n")[1].split("## English Version\n")[0] : policy.split("## English Version\n")[1];
   return <div className="max-w-2xl mx-auto px-6 py-12">
     <h1 className="text-3xl font-medium">{chinese ? "隐私政策" : "Privacy Policy"}</h1>
-    <p className="mt-4 leading-relaxed">{chinese ? "更新及生效日期：2026年10月19日。政策包含1.1功能说明，具体功能以您安装的版本及实际开放状态为准。" : "Updated and effective October 19, 2026. Includes version 1.1 data practices; feature availability depends on your installed version and rollout status."}</p>
+    <p className="mt-4 leading-relaxed">{previous
+      ? (chinese ? "历史政策 · 更新及生效日期：2026年10月19日。包含1.1功能说明。" : "Historical policy · Updated and effective October 19, 2026. Includes version 1.1 data practices.")
+      : (chinese ? "更新及生效日期：2026年11月20日。政策包含1.2功能说明，具体功能以您安装的版本及实际开放状态为准。" : "Updated and effective November 20, 2026. Includes version 1.2 data practices; feature availability depends on your installed version and rollout status.")}</p>
     <nav className="flex flex-wrap gap-5 mt-5 underline">
-      <Link to="/privacy/1.0">{chinese ? "查看旧版政策" : "Previous policy"}</Link>
+      <Link to={previous ? "/privacy" : "/privacy/1.1"}>{chinese ? (previous ? "当前政策" : "1.1版政策") : (previous ? "Current policy" : "Version 1.1 policy")}</Link>
+      <Link to="/privacy/1.0">{chinese ? "1.0版政策" : "Version 1.0 policy"}</Link>
       <Link to="/support">{chinese ? "联系与删除申请" : "Contact and deletion requests"}</Link>
       <Link to="/update">{chinese ? "更新与数据恢复指南" : "Update and recovery guide"}</Link>
     </nav>
