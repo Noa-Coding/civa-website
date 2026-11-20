@@ -131,7 +131,7 @@ export function Layout({ children }: LayoutProps) {
 
       {/* Content */}
       <aside className="px-6 py-3 text-center text-sm" style={{ background: "var(--yellow50)" }}>
-        {lang === "zh" ? "隐私政策已于2026年10月19日更新 · 1.1功能以App实际发布为准" : "Privacy policy updated October 19, 2026 · Version 1.1 features are subject to app availability"}
+        {lang === "zh" ? "隐私政策已于2026年11月20日更新 · 1.2功能以App实际发布为准" : "Privacy policy updated November 20, 2026 · Version 1.2 features are subject to app availability"}
       </aside>
       <main className="flex-1">{children}</main>
 
